@@ -70,10 +70,15 @@ export default function Header() {
               <ChevronRight className="w-4 h-4" />
               COMO JOGAR
             </a>
-            <button className="btn-tactical flex items-center gap-2 text-sm">
+            
+            {/* LINK DA ÁREA DO USUÁRIO - DESKTOP */}
+            <a
+              href="/area-usuario.html"
+              className="btn-tactical flex items-center gap-2 text-sm"
+            >
               <User className="w-4 h-4" />
               ENTRAR
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -110,10 +115,14 @@ export default function Header() {
             </a>
           ))}
           <div className="mt-4 pt-4 border-t border-cod-gray-light">
-            <button className="btn-tactical w-full flex items-center justify-center gap-2">
+            {/* LINK DA ÁREA DO USUÁRIO - MOBILE */}
+            <a
+              href="/area-usuario.html"
+              className="btn-tactical w-full flex items-center justify-center gap-2"
+            >
               <User className="w-4 h-4" />
               ENTRAR
-            </button>
+            </a>
           </div>
         </nav>
       </div>
