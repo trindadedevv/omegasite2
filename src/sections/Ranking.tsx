@@ -31,14 +31,14 @@ function getRankIcon(rank: number) {
   if (rank === 1) return <Trophy className="w-5 h-5 text-yellow-400" />;
   if (rank === 2) return <Medal className="w-5 h-5 text-gray-300" />;
   if (rank === 3) return <Medal className="w-5 h-5 text-amber-600" />;
-  return <span className="font-tech text-cod-muted">#{rank}</span>;
+  return <span className="font-tech text-omega-muted">#{rank}</span>;
 }
 
 function getRankStyle(rank: number) {
   if (rank === 1) return 'bg-yellow-400/10 border-yellow-400/30';
   if (rank === 2) return 'bg-gray-300/10 border-gray-300/30';
   if (rank === 3) return 'bg-amber-600/10 border-amber-600/30';
-  return 'bg-cod-gray/50 border-cod-gray-light';
+  return 'bg-omega-gray/50 border-omega-gray-light';
 }
 
 export default function Ranking() {
@@ -47,26 +47,26 @@ export default function Ranking() {
   return (
     <section id="ranking" className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-cod-dark" />
+      <div className="absolute inset-0 bg-omega-dark" />
       <div className="absolute inset-0 tactical-grid opacity-20" />
 
       {/* Decorative Elements */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-cod-green/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-cod-orange/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-omega-red/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-omega-orange/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-4">
-            <Trophy className="w-4 h-4 text-cod-green" />
-            <span className="font-tech text-sm text-cod-green tracking-[0.3em]">LEADERBOARD</span>
-            <Trophy className="w-4 h-4 text-cod-green" />
+            <Trophy className="w-4 h-4 text-omega-red" />
+            <span className="font-tech text-sm text-omega-red tracking-[0.3em]">LEADERBOARD</span>
+            <Trophy className="w-4 h-4 text-omega-red" />
           </div>
-          <h2 className="font-military text-4xl lg:text-5xl text-cod-white mb-4">
-            RANKING <span className="text-cod-green">COMPETITIVO</span>
+          <h2 className="font-military text-4xl lg:text-5xl text-omega-white mb-4">
+            RANKING <span className="text-omega-red">COMPETITIVO</span>
           </h2>
-          <p className="text-cod-muted max-w-2xl mx-auto">
-            Os melhores jogadores e clãs do COD Royale. Suba no ranking e prove seu valor no campo de batalha.
+          <p className="text-omega-muted max-w-2xl mx-auto">
+            Os melhores jogadores e clãs do Omega Royale. Suba no ranking e prove seu valor no campo de batalha.
           </p>
         </div>
 
@@ -78,8 +78,8 @@ export default function Ranking() {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-6 py-3 font-semibold tracking-wider transition-all ${
                 activeTab === tab.id
-                  ? 'bg-cod-green text-cod-black'
-                  : 'bg-cod-gray text-cod-muted hover:text-cod-white'
+                  ? 'bg-omega-red text-white'
+                  : 'bg-omega-gray text-omega-muted hover:text-omega-white'
               }`}
               style={{ clipPath: 'polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%)' }}
             >
@@ -92,7 +92,7 @@ export default function Ranking() {
         {/* Leaderboard Table */}
         <div className="card-tactical overflow-hidden">
           {/* Table Header */}
-          <div className="grid grid-cols-12 gap-4 p-4 bg-cod-gray/80 border-b border-cod-gray-light text-xs font-semibold text-cod-muted tracking-wider">
+          <div className="grid grid-cols-12 gap-4 p-4 bg-omega-gray/80 border-b border-omega-gray-light text-xs font-semibold text-omega-muted tracking-wider">
             <div className="col-span-1 text-center">RANK</div>
             <div className="col-span-4">{activeTab === 'players' ? 'JOGADOR' : 'CLÃ'}</div>
             {activeTab === 'players' ? (
@@ -112,11 +112,11 @@ export default function Ranking() {
           </div>
 
           {/* Table Body */}
-          <div className="divide-y divide-cod-gray-light/50">
+          <div className="divide-y divide-omega-gray-light/50">
             {(activeTab === 'players' ? leaderboardData : clansData).map((item, index) => (
               <div
                 key={index}
-                className={`grid grid-cols-12 gap-4 p-4 items-center hover:bg-cod-gray/30 transition-all ${
+                className={`grid grid-cols-12 gap-4 p-4 items-center hover:bg-omega-gray/30 transition-all ${
                   index < 3 ? getRankStyle(item.rank) : ''
                 }`}
               >
@@ -125,31 +125,31 @@ export default function Ranking() {
                 </div>
                 <div className="col-span-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-cod-gray-light rounded flex items-center justify-center">
-                      <Star className="w-4 h-4 text-cod-muted" />
+                    <div className="w-8 h-8 bg-omega-gray-light rounded flex items-center justify-center">
+                      <Star className="w-4 h-4 text-omega-muted" />
                     </div>
-                    <span className="font-semibold text-cod-white">{item.name}</span>
+                    <span className="font-semibold text-omega-white">{item.name}</span>
                   </div>
                 </div>
                 {'clan' in item ? (
                   <div className="col-span-2 text-center">
-                    <span className="inline-flex items-center px-2 py-1 bg-cod-green/10 text-cod-green text-xs font-semibold rounded">
+                    <span className="inline-flex items-center px-2 py-1 bg-omega-red/10 text-omega-red text-xs font-semibold rounded">
                       {item.clan}
                     </span>
                   </div>
                 ) : (
                   <div className="col-span-2 text-center">
-                    <span className="text-cod-muted font-tech">{item.tag}</span>
+                    <span className="text-omega-muted font-tech">{item.tag}</span>
                   </div>
                 )}
-                <div className="col-span-2 text-center font-tech text-cod-white">
+                <div className="col-span-2 text-center font-tech text-omega-white">
                   {'kd' in item ? item.kd : item.members}
                 </div>
-                <div className="col-span-2 text-center font-tech text-cod-white">
+                <div className="col-span-2 text-center font-tech text-omega-white">
                   {item.wins.toLocaleString()}
                 </div>
                 <div className="col-span-1 text-right">
-                  <span className="font-tech text-cod-green">{item.points.toLocaleString()}</span>
+                  <span className="font-tech text-omega-red">{item.points.toLocaleString()}</span>
                 </div>
               </div>
             ))}
@@ -158,7 +158,7 @@ export default function Ranking() {
 
         {/* View All Button */}
         <div className="mt-8 text-center">
-          <button className="inline-flex items-center gap-2 text-cod-green hover:text-cod-white transition-colors font-semibold tracking-wider">
+          <button className="inline-flex items-center gap-2 text-omega-red hover:text-omega-white transition-colors font-semibold tracking-wider">
             VER RANKING COMPLETO
             <ChevronRight className="w-4 h-4" />
           </button>
@@ -167,19 +167,19 @@ export default function Ranking() {
         {/* Stats Summary */}
         <div className="grid sm:grid-cols-3 gap-6 mt-12">
           <div className="card-tactical p-6 text-center tactical-corner">
-            <TrendingUp className="w-8 h-8 text-cod-green mx-auto mb-3" />
-            <div className="font-tech text-3xl text-cod-white mb-1">2.4M+</div>
-            <div className="text-xs text-cod-muted uppercase tracking-wider">Partidas Jogadas</div>
+            <TrendingUp className="w-8 h-8 text-omega-red mx-auto mb-3" />
+            <div className="font-tech text-3xl text-omega-white mb-1">2.4M+</div>
+            <div className="text-xs text-omega-muted uppercase tracking-wider">Partidas Jogadas</div>
           </div>
           <div className="card-tactical p-6 text-center tactical-corner">
-            <Users className="w-8 h-8 text-cod-orange mx-auto mb-3" />
-            <div className="font-tech text-3xl text-cod-white mb-1">150K+</div>
-            <div className="text-xs text-cod-muted uppercase tracking-wider">Jogadores Ativos</div>
+            <Users className="w-8 h-8 text-omega-orange mx-auto mb-3" />
+            <div className="font-tech text-3xl text-omega-white mb-1">150K+</div>
+            <div className="text-xs text-omega-muted uppercase tracking-wider">Jogadores Ativos</div>
           </div>
           <div className="card-tactical p-6 text-center tactical-corner">
-            <Trophy className="w-8 h-8 text-cod-red mx-auto mb-3" />
-            <div className="font-tech text-3xl text-cod-white mb-1">R$ 50K</div>
-            <div className="text-xs text-cod-muted uppercase tracking-wider">Em Prêmios/Mês</div>
+            <Trophy className="w-8 h-8 text-omega-red mx-auto mb-3" />
+            <div className="font-tech text-3xl text-omega-white mb-1">R$ 50K</div>
+            <div className="text-xs text-omega-muted uppercase tracking-wider">Em Prêmios/Mês</div>
           </div>
         </div>
       </div>

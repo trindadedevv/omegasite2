@@ -5,22 +5,21 @@
 @tailwind utilities;
 
 :root {
-  /* COD Theme Colors */
-  --cod-black: #0a0a0a;
-  --cod-dark: #111111;
-  --cod-gray: #1a1a1a;
-  --cod-gray-light: #2a2a2a;
-  --cod-green: #4ade80;
-  --cod-green-dark: #22c55e;
-  --cod-orange: #f97316;
-  --cod-red: #ef4444;
-  --cod-yellow: #eab308;
-  --cod-white: #f5f5f5;
-  --cod-muted: #888888;
+  /* Omega Theme Colors - Red, Black, Gray */
+  --omega-black: #050505;
+  --omega-dark: #0a0a0a;
+  --omega-gray: #141414;
+  --omega-gray-light: #1f1f1f;
+  --omega-gray-lighter: #2a2a2a;
+  --omega-red: #dc2626;
+  --omega-red-light: #ef4444;
+  --omega-red-dark: #991b1b;
+  --omega-white: #f5f5f5;
+  --omega-muted: #737373;
   
-  /* HUD Colors */
-  --hud-cyan: #00d4ff;
-  --hud-green: #39ff14;
+  /* Accent Colors */
+  --accent-orange: #f97316;
+  --accent-yellow: #eab308;
   
   --radius: 0.25rem;
 }
@@ -37,8 +36,8 @@ html {
 
 body {
   font-family: 'Rajdhani', sans-serif;
-  background-color: var(--cod-black);
-  color: var(--cod-white);
+  background-color: var(--omega-black);
+  color: var(--omega-white);
   overflow-x: hidden;
 }
 
@@ -57,16 +56,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--cod-dark);
+  background: var(--omega-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--cod-green);
+  background: var(--omega-red);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--cod-green-dark);
+  background: var(--omega-red-light);
 }
 
 /* HUD Scanline Effect */
@@ -99,7 +98,7 @@ body {
   position: absolute;
   width: 12px;
   height: 12px;
-  border: 2px solid var(--cod-green);
+  border: 2px solid var(--omega-red);
   transition: all 0.3s ease;
 }
 
@@ -166,23 +165,23 @@ body {
 
 .glitch-text::before {
   animation: glitch 2s infinite linear alternate-reverse;
-  color: var(--cod-green);
+  color: var(--omega-red);
   z-index: -1;
 }
 
 .glitch-text::after {
   animation: glitch 3s infinite linear alternate-reverse;
-  color: var(--cod-orange);
+  color: var(--accent-orange);
   z-index: -2;
 }
 
 /* Pulse Animation */
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 5px var(--cod-green), 0 0 10px var(--cod-green);
+    box-shadow: 0 0 5px var(--omega-red), 0 0 10px var(--omega-red);
   }
   50% {
-    box-shadow: 0 0 20px var(--cod-green), 0 0 30px var(--cod-green);
+    box-shadow: 0 0 20px var(--omega-red), 0 0 30px var(--omega-red);
   }
 }
 
@@ -204,23 +203,23 @@ body {
   position: absolute;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--cod-green), transparent);
+  background: linear-gradient(90deg, transparent, var(--omega-red), transparent);
   animation: scan 3s linear infinite;
 }
 
 /* Grid Background */
 .tactical-grid {
   background-image: 
-    linear-gradient(rgba(74, 222, 128, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(74, 222, 128, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(220, 38, 38, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(220, 38, 38, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
 /* Button Styles */
 .btn-tactical {
   position: relative;
-  background: linear-gradient(135deg, var(--cod-green-dark), var(--cod-green));
-  color: var(--cod-black);
+  background: linear-gradient(135deg, var(--omega-red-dark), var(--omega-red));
+  color: var(--omega-white);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -237,7 +236,7 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
   transition: left 0.5s ease;
 }
 
@@ -247,21 +246,24 @@ body {
 
 .btn-tactical:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(74, 222, 128, 0.3);
+  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
 }
 
-.btn-danger {
-  background: linear-gradient(135deg, var(--cod-red), #dc2626);
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--omega-gray-lighter);
+  color: var(--omega-white);
 }
 
-.btn-danger:hover {
-  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+.btn-secondary:hover {
+  border-color: var(--omega-red);
+  color: var(--omega-red);
 }
 
 /* Card Styles */
 .card-tactical {
-  background: rgba(26, 26, 26, 0.8);
-  border: 1px solid rgba(74, 222, 128, 0.2);
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(220, 38, 38, 0.2);
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
@@ -274,7 +276,7 @@ body {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--cod-green), transparent);
+  background: linear-gradient(90deg, transparent, var(--omega-red), transparent);
 }
 
 /* Stat Number Animation */
@@ -296,7 +298,7 @@ body {
 /* Navigation Link Hover */
 .nav-link {
   position: relative;
-  color: var(--cod-muted);
+  color: var(--omega-muted);
   transition: color 0.3s ease;
 }
 
@@ -307,12 +309,12 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--cod-green);
+  background: var(--omega-red);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--cod-green);
+  color: var(--omega-red);
 }
 
 .nav-link:hover::after {
@@ -322,7 +324,7 @@ body {
 /* Section Divider */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--cod-green), transparent);
+  background: linear-gradient(90deg, transparent, var(--omega-red), transparent);
   margin: 4rem 0;
 }
 
@@ -335,7 +337,7 @@ body {
 .target-reticle::after {
   content: '';
   position: absolute;
-  border: 2px solid var(--cod-green);
+  border: 2px solid var(--omega-red);
   width: 20px;
   height: 20px;
 }
@@ -357,7 +359,7 @@ body {
 /* Loading Bar */
 .loading-bar {
   height: 4px;
-  background: var(--cod-gray);
+  background: var(--omega-gray);
   position: relative;
   overflow: hidden;
 }
@@ -369,7 +371,7 @@ body {
   left: 0;
   height: 100%;
   width: 30%;
-  background: var(--cod-green);
+  background: var(--omega-red);
   animation: loading 2s ease-in-out infinite;
 }
 
@@ -380,6 +382,35 @@ body {
   100% {
     left: 100%;
   }
+}
+
+/* Omega Symbol */
+.omega-symbol {
+  font-family: 'Black Ops One', cursive;
+  color: var(--omega-red);
+  text-shadow: 
+    0 0 10px rgba(220, 38, 38, 0.5),
+    0 0 20px rgba(220, 38, 38, 0.3),
+    0 0 30px rgba(220, 38, 38, 0.2);
+}
+
+/* Input Styles */
+.input-tactical {
+  background: var(--omega-gray);
+  border: 1px solid var(--omega-gray-lighter);
+  color: var(--omega-white);
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-tactical:focus {
+  outline: none;
+  border-color: var(--omega-red);
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.2);
+}
+
+.input-tactical::placeholder {
+  color: var(--omega-muted);
 }
 
 /* Responsive */

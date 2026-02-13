@@ -48,20 +48,20 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // COD Theme Colors
-        cod: {
-          black: '#0a0a0a',
-          dark: '#111111',
-          gray: '#1a1a1a',
-          'gray-light': '#2a2a2a',
-          green: '#4ade80',
-          'green-dark': '#22c55e',
-          orange: '#f97316',
-          red: '#ef4444',
-          yellow: '#eab308',
+        // Omega Theme Colors - Red, Black, Gray
+        omega: {
+          black: '#050505',
+          dark: '#0a0a0a',
+          gray: '#141414',
+          'gray-light': '#1f1f1f',
+          'gray-lighter': '#2a2a2a',
+          red: '#dc2626',
+          'red-light': '#ef4444',
+          'red-dark': '#991b1b',
           white: '#f5f5f5',
-          muted: '#888888',
-          cyan: '#00d4ff',
+          muted: '#737373',
+          orange: '#f97316',
+          yellow: '#eab308',
         },
       },
       borderRadius: {
@@ -88,8 +88,8 @@ module.exports = {
           "20%,50%": { opacity: "0" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 5px #4ade80, 0 0 10px #4ade80" },
-          "50%": { boxShadow: "0 0 20px #4ade80, 0 0 30px #4ade80" },
+          "0%, 100%": { boxShadow: "0 0 5px #dc2626, 0 0 10px #dc2626" },
+          "50%": { boxShadow: "0 0 20px #dc2626, 0 0 30px #dc2626" },
         },
         "scan": {
           "0%": { transform: "translateY(-100%)" },

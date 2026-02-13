@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Header from './sections/Header';
 import Hero from './sections/Hero';
 import About from './sections/About';
@@ -7,13 +8,17 @@ import Ranking from './sections/Ranking';
 import Calendar from './sections/Calendar';
 import Updates from './sections/Updates';
 import Footer from './sections/Footer';
+import Login from './pages/Login';
+import Shop from './pages/Shop';
 
-function App() {
+type PageType = 'home' | 'login' | 'shop' | 'register' | 'dashboard';
+
+function HomePage({ onNavigate }: { onNavigate: (page: PageType) => void }) {
   return (
-    <div className="min-h-screen bg-cod-black text-cod-white overflow-x-hidden">
-      <Header />
+    <>
+      <Header onNavigate={onNavigate} />
       <main>
-        <Hero />
+        <Hero onNavigate={onNavigate} />
         <About />
         <HowToPlay />
         <Pricing />
@@ -21,9 +26,35 @@ function App() {
         <Calendar />
         <Updates />
       </main>
-      <Footer />
-    </div>
+      <Footer onNavigate={onNavigate} />
+    </>
   );
+}
+
+function App() {
+  const [currentPage, setCurrentPage] = useState<PageType>('home');
+
+  const handleNavigate = (page: PageType) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Renderizar a página atual
+  switch (currentPage) {
+    case 'login':
+      return <Login onNavigate={handleNavigate} />;
+    case 'shop':
+      return <Shop onNavigate={handleNavigate} />;
+    case 'register':
+      // Por enquanto, redireciona para login
+      return <Login onNavigate={handleNavigate} />;
+    case 'dashboard':
+      // Por enquanto, volta para home
+      return <HomePage onNavigate={handleNavigate} />;
+    case 'home':
+    default:
+      return <HomePage onNavigate={handleNavigate} />;
+  }
 }
 
 export default App;

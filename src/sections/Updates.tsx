@@ -9,7 +9,7 @@ const updates = [
     date: '10 FEV 2026',
     type: 'major',
     icon: Sparkles,
-    color: 'cod-orange',
+    color: 'omega-orange',
     summary: 'Nova temporada com mapa expandido, armas e sistema de recompensas renovado.',
     changes: [
       'Novo mapa: Zona de Guerra Industrial',
@@ -25,7 +25,7 @@ const updates = [
     date: '05 FEV 2026',
     type: 'patch',
     icon: Wrench,
-    color: 'cod-green',
+    color: 'omega-red',
     summary: 'Ajustes de balanceamento em armas e correções de bugs reportados.',
     changes: [
       'Nerf na sniper Barrett (dano reduzido 15%)',
@@ -41,7 +41,7 @@ const updates = [
     date: '01 FEV 2026',
     type: 'security',
     icon: Shield,
-    color: 'cod-red',
+    color: 'omega-red',
     summary: 'Atualização importante de segurança e melhorias no sistema anti-cheat.',
     changes: [
       'Nova camada de proteção anti-cheat',
@@ -57,7 +57,7 @@ const updates = [
     date: '25 JAN 2026',
     type: 'feature',
     icon: Sparkles,
-    color: 'cod-orange',
+    color: 'omega-orange',
     summary: 'Novo modo de jogo focado em trabalho em equipe e estratégia.',
     changes: [
       'Modo Resgate Tático 5v5',
@@ -81,26 +81,26 @@ export default function Updates() {
   return (
     <section id="updates" className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-cod-black" />
+      <div className="absolute inset-0 bg-omega-black" />
       <div className="absolute inset-0 tactical-grid opacity-20" />
 
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-1/4 w-px h-32 bg-gradient-to-b from-cod-green/50 to-transparent" />
-      <div className="absolute top-0 right-1/4 w-px h-32 bg-gradient-to-b from-cod-orange/50 to-transparent" />
+      <div className="absolute top-0 left-1/4 w-px h-32 bg-gradient-to-b from-omega-red/50 to-transparent" />
+      <div className="absolute top-0 right-1/4 w-px h-32 bg-gradient-to-b from-omega-orange/50 to-transparent" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-4">
-            <AlertCircle className="w-4 h-4 text-cod-green" />
-            <span className="font-tech text-sm text-cod-green tracking-[0.3em]">CHANGELOG</span>
-            <AlertCircle className="w-4 h-4 text-cod-green" />
+            <AlertCircle className="w-4 h-4 text-omega-red" />
+            <span className="font-tech text-sm text-omega-red tracking-[0.3em]">CHANGELOG</span>
+            <AlertCircle className="w-4 h-4 text-omega-red" />
           </div>
-          <h2 className="font-military text-4xl lg:text-5xl text-cod-white mb-4">
-            ATUALIZAÇÕES <span className="text-cod-green">RECENTES</span>
+          <h2 className="font-military text-4xl lg:text-5xl text-omega-white mb-4">
+            ATUALIZAÇÕES <span className="text-omega-red">RECENTES</span>
           </h2>
-          <p className="text-cod-muted max-w-2xl mx-auto">
-            Fique por dentro das últimas novidades, melhorias e correções do COD Royale.
+          <p className="text-omega-muted max-w-2xl mx-auto">
+            Fique por dentro das últimas novidades, melhorias e correções do Omega Royale.
           </p>
         </div>
 
@@ -110,39 +110,39 @@ export default function Updates() {
             <div
               key={update.id}
               className={`card-tactical overflow-hidden transition-all duration-300 ${
-                expandedId === update.id ? 'border-cod-green/40' : ''
+                expandedId === update.id ? 'border-omega-red/40' : ''
               }`}
             >
               {/* Header */}
               <button
                 onClick={() => setExpandedId(expandedId === update.id ? null : update.id)}
-                className="w-full p-6 flex items-center gap-4 hover:bg-cod-gray/30 transition-colors"
+                className="w-full p-6 flex items-center gap-4 hover:bg-omega-gray/30 transition-colors"
               >
                 {/* Icon */}
-                <div className={`flex-shrink-0 w-12 h-12 flex items-center justify-center bg-${update.color}/10 border border-${update.color}/30 rounded-lg`}>
-                  <update.icon className={`w-6 h-6 text-${update.color}`} />
+                <div className={`flex-shrink-0 w-12 h-12 flex items-center justify-center bg-omega-red/10 border border-omega-red/30 rounded-lg`}>
+                  <update.icon className={`w-6 h-6 text-omega-red`} />
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 text-left">
                   <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <span className={`inline-flex items-center gap-1 px-2 py-0.5 bg-${update.color}/10 text-${update.color} text-[10px] font-bold tracking-wider rounded`}>
+                    <span className={`inline-flex items-center gap-1 px-2 py-0.5 bg-omega-red/10 text-omega-red text-[10px] font-bold tracking-wider rounded`}>
                       <Tag className="w-3 h-3" />
                       {typeLabels[update.type]}
                     </span>
-                    <span className="font-tech text-sm text-cod-muted">{update.version}</span>
+                    <span className="font-tech text-sm text-omega-muted">{update.version}</span>
                   </div>
-                  <h3 className="font-military text-lg text-cod-white">{update.title}</h3>
+                  <h3 className="font-military text-lg text-omega-white">{update.title}</h3>
                 </div>
 
                 {/* Date & Arrow */}
                 <div className="flex items-center gap-4">
-                  <div className="hidden sm:flex items-center gap-2 text-cod-muted text-sm">
+                  <div className="hidden sm:flex items-center gap-2 text-omega-muted text-sm">
                     <Calendar className="w-4 h-4" />
                     <span className="font-tech">{update.date}</span>
                   </div>
                   <ChevronRight
-                    className={`w-5 h-5 text-cod-muted transition-transform ${
+                    className={`w-5 h-5 text-omega-muted transition-transform ${
                       expandedId === update.id ? 'rotate-90' : ''
                     }`}
                   />
@@ -151,12 +151,12 @@ export default function Updates() {
 
               {/* Expanded Content */}
               {expandedId === update.id && (
-                <div className="px-6 pb-6 border-t border-cod-gray-light/50">
+                <div className="px-6 pb-6 border-t border-omega-gray-light/50">
                   <div className="pt-4">
-                    <p className="text-cod-muted mb-4">{update.summary}</p>
+                    <p className="text-omega-muted mb-4">{update.summary}</p>
                     
-                    <h4 className="font-semibold text-cod-white text-sm mb-3 flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-cod-green" />
+                    <h4 className="font-semibold text-omega-white text-sm mb-3 flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-omega-red" />
                       MUDANÇAS
                     </h4>
                     
@@ -164,9 +164,9 @@ export default function Updates() {
                       {update.changes.map((change, index) => (
                         <li
                           key={index}
-                          className="flex items-start gap-3 text-sm text-cod-white/90"
+                          className="flex items-start gap-3 text-sm text-omega-white/90"
                         >
-                          <div className="w-1.5 h-1.5 bg-cod-green rounded-full mt-2 flex-shrink-0" />
+                          <div className="w-1.5 h-1.5 bg-omega-red rounded-full mt-2 flex-shrink-0" />
                           {change}
                         </li>
                       ))}
@@ -180,7 +180,7 @@ export default function Updates() {
 
         {/* View All */}
         <div className="mt-8 text-center">
-          <button className="inline-flex items-center gap-2 text-cod-green hover:text-cod-white transition-colors font-semibold tracking-wider">
+          <button className="inline-flex items-center gap-2 text-omega-red hover:text-omega-white transition-colors font-semibold tracking-wider">
             VER TODAS AS ATUALIZAÇÕES
             <ChevronRight className="w-4 h-4" />
           </button>

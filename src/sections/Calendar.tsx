@@ -12,7 +12,7 @@ const events = [
     players: '64/128',
     mode: 'Battle Royale',
     icon: Trophy,
-    color: 'cod-orange',
+    color: 'omega-orange',
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const events = [
     players: 'Ilimitado',
     mode: 'Todos os modos',
     icon: Zap,
-    color: 'cod-green',
+    color: 'omega-red',
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const events = [
     players: '8 Clãs',
     mode: 'Território',
     icon: Flame,
-    color: 'cod-red',
+    color: 'omega-red',
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const events = [
     players: '32/64',
     mode: 'Duo Battle',
     icon: Trophy,
-    color: 'cod-orange',
+    color: 'omega-orange',
   },
   {
     id: 5,
@@ -60,7 +60,7 @@ const events = [
     players: '50/100',
     mode: 'Sniper Only',
     icon: Target,
-    color: 'cod-green',
+    color: 'omega-red',
   },
   {
     id: 6,
@@ -72,7 +72,7 @@ const events = [
     players: '16/32',
     mode: 'Ranqueado',
     icon: Trophy,
-    color: 'cod-orange',
+    color: 'omega-orange',
   },
 ];
 
@@ -84,36 +84,36 @@ export default function Calendar() {
   return (
     <section id="calendar" className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-cod-dark" />
+      <div className="absolute inset-0 bg-omega-dark" />
       <div className="absolute inset-0 tactical-grid opacity-20" />
 
       {/* Decorative Elements */}
-      <div className="absolute top-1/2 left-0 w-64 h-64 bg-cod-green/5 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="absolute top-1/2 right-0 w-64 h-64 bg-cod-orange/5 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute top-1/2 left-0 w-64 h-64 bg-omega-red/5 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute top-1/2 right-0 w-64 h-64 bg-omega-orange/5 rounded-full blur-3xl -translate-y-1/2" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-4">
-            <CalendarIcon className="w-4 h-4 text-cod-green" />
-            <span className="font-tech text-sm text-cod-green tracking-[0.3em]">EVENTOS</span>
-            <CalendarIcon className="w-4 h-4 text-cod-green" />
+            <CalendarIcon className="w-4 h-4 text-omega-red" />
+            <span className="font-tech text-sm text-omega-red tracking-[0.3em]">EVENTOS</span>
+            <CalendarIcon className="w-4 h-4 text-omega-red" />
           </div>
-          <h2 className="font-military text-4xl lg:text-5xl text-cod-white mb-4">
-            CALENDÁRIO DE <span className="text-cod-green">EVENTOS</span>
+          <h2 className="font-military text-4xl lg:text-5xl text-omega-white mb-4">
+            CALENDÁRIO DE <span className="text-omega-red">EVENTOS</span>
           </h2>
-          <p className="text-cod-muted max-w-2xl mx-auto">
+          <p className="text-omega-muted max-w-2xl mx-auto">
             Não perca nenhum evento! Fique por dentro de campeonatos, torneios e eventos especiais.
           </p>
         </div>
 
         {/* Calendar Header */}
         <div className="flex items-center justify-between mb-8">
-          <button className="p-2 text-cod-muted hover:text-cod-green transition-colors">
+          <button className="p-2 text-omega-muted hover:text-omega-red transition-colors">
             <ChevronLeft className="w-6 h-6" />
           </button>
-          <h3 className="font-military text-2xl text-cod-white">{currentMonth}</h3>
-          <button className="p-2 text-cod-muted hover:text-cod-green transition-colors">
+          <h3 className="font-military text-2xl text-omega-white">{currentMonth}</h3>
+          <button className="p-2 text-omega-muted hover:text-omega-red transition-colors">
             <ChevronRight className="w-6 h-6" />
           </button>
         </div>
@@ -123,7 +123,7 @@ export default function Calendar() {
           {weekDays.map((day) => (
             <div
               key={day}
-              className="text-center py-2 text-xs font-semibold text-cod-muted tracking-wider"
+              className="text-center py-2 text-xs font-semibold text-omega-muted tracking-wider"
             >
               {day}
             </div>
@@ -141,23 +141,23 @@ export default function Calendar() {
                 key={day}
                 className={`aspect-square p-2 border ${
                   isToday
-                    ? 'border-cod-green bg-cod-green/10'
+                    ? 'border-omega-red bg-omega-red/10'
                     : event
-                    ? `border-${event.color}/30 bg-${event.color}/5`
-                    : 'border-cod-gray-light bg-cod-gray/30'
-                } hover:border-cod-green/50 transition-all cursor-pointer`}
+                    ? 'border-omega-red/30 bg-omega-red/5'
+                    : 'border-omega-gray-light bg-omega-gray/30'
+                } hover:border-omega-red/50 transition-all cursor-pointer`}
               >
                 <div className="flex flex-col h-full">
                   <span
                     className={`font-tech text-sm ${
-                      isToday ? 'text-cod-green' : event ? 'text-cod-white' : 'text-cod-muted'
+                      isToday ? 'text-omega-red' : event ? 'text-omega-white' : 'text-omega-muted'
                     }`}
                   >
                     {day}
                   </span>
                   {event && (
                     <div className="mt-auto">
-                      <event.icon className={`w-4 h-4 text-${event.color}`} />
+                      <event.icon className={`w-4 h-4 text-omega-red`} />
                     </div>
                   )}
                 </div>
@@ -168,8 +168,8 @@ export default function Calendar() {
 
         {/* Upcoming Events */}
         <div>
-          <h3 className="font-military text-xl text-cod-white mb-6 flex items-center gap-3">
-            <Flame className="w-5 h-5 text-cod-orange" />
+          <h3 className="font-military text-xl text-omega-white mb-6 flex items-center gap-3">
+            <Flame className="w-5 h-5 text-omega-orange" />
             PRÓXIMOS EVENTOS
           </h3>
 
@@ -177,16 +177,16 @@ export default function Calendar() {
             {events.slice(0, 6).map((event) => (
               <div
                 key={event.id}
-                className="card-tactical p-4 tactical-corner group hover:border-cod-green/40 transition-all"
+                className="card-tactical p-4 tactical-corner group hover:border-omega-red/40 transition-all"
               >
                 {/* Header */}
                 <div className="flex items-start justify-between mb-3">
-                  <div className={`p-2 bg-${event.color}/10 border border-${event.color}/30 rounded`}>
-                    <event.icon className={`w-5 h-5 text-${event.color}`} />
+                  <div className={`p-2 bg-omega-red/10 border border-omega-red/30 rounded`}>
+                    <event.icon className={`w-5 h-5 text-omega-red`} />
                   </div>
                   <div className="text-right">
-                    <div className="font-tech text-lg text-cod-white">{event.date}</div>
-                    <div className="text-xs text-cod-muted flex items-center gap-1">
+                    <div className="font-tech text-lg text-omega-white">{event.date}</div>
+                    <div className="text-xs text-omega-muted flex items-center gap-1">
                       <Clock className="w-3 h-3" />
                       {event.time}
                     </div>
@@ -194,20 +194,20 @@ export default function Calendar() {
                 </div>
 
                 {/* Title */}
-                <h4 className="font-semibold text-cod-white mb-2">{event.title}</h4>
+                <h4 className="font-semibold text-omega-white mb-2">{event.title}</h4>
 
                 {/* Details */}
                 <div className="space-y-1 text-xs">
-                  <div className="flex items-center gap-2 text-cod-muted">
+                  <div className="flex items-center gap-2 text-omega-muted">
                     <MapPin className="w-3 h-3" />
                     <span>{event.mode}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-cod-muted">
+                  <div className="flex items-center gap-2 text-omega-muted">
                     <Users className="w-3 h-3" />
                     <span>{event.players}</span>
                   </div>
                   {event.prize !== '-' && (
-                    <div className="flex items-center gap-2 text-cod-green">
+                    <div className="flex items-center gap-2 text-omega-red">
                       <Trophy className="w-3 h-3" />
                       <span>{event.prize}</span>
                     </div>
@@ -215,7 +215,7 @@ export default function Calendar() {
                 </div>
 
                 {/* Action */}
-                <button className="w-full mt-4 py-2 text-xs font-semibold tracking-wider bg-cod-gray hover:bg-cod-green hover:text-cod-black text-cod-white transition-all">
+                <button className="w-full mt-4 py-2 text-xs font-semibold tracking-wider bg-omega-gray hover:bg-omega-red hover:text-white transition-all">
                   INSCREVER-SE
                 </button>
               </div>
@@ -229,3 +229,4 @@ export default function Calendar() {
     </section>
   );
 }
+
