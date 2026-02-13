@@ -1,3 +1,4 @@
+// src/App.tsx (atualizado)
 import { useState } from 'react';
 import Header from './sections/Header';
 import Hero from './sections/Hero';
@@ -10,6 +11,7 @@ import Updates from './sections/Updates';
 import Footer from './sections/Footer';
 import Login from './pages/Login';
 import Shop from './pages/Shop';
+import Dashboard from './pages/Dashboard';
 
 type PageType = 'home' | 'login' | 'shop' | 'register' | 'dashboard';
 
@@ -39,18 +41,13 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Renderizar a página atual
   switch (currentPage) {
     case 'login':
       return <Login onNavigate={handleNavigate} />;
     case 'shop':
       return <Shop onNavigate={handleNavigate} />;
-    case 'register':
-      // Por enquanto, redireciona para login
-      return <Login onNavigate={handleNavigate} />;
     case 'dashboard':
-      // Por enquanto, volta para home
-      return <HomePage onNavigate={handleNavigate} />;
+      return <Dashboard onNavigate={handleNavigate} />;
     case 'home':
     default:
       return <HomePage onNavigate={handleNavigate} />;
