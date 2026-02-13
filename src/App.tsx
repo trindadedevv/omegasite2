@@ -1,4 +1,4 @@
-// src/App.tsx (atualizado)
+// src/App.tsx
 import { useState } from 'react';
 import Header from './sections/Header';
 import Hero from './sections/Hero';
@@ -10,8 +10,9 @@ import Calendar from './sections/Calendar';
 import Updates from './sections/Updates';
 import Footer from './sections/Footer';
 import Login from './pages/Login';
+import Register from './pages/Register';  // NOVO
+import Dashboard from './pages/Dashboard'; // NOVO
 import Shop from './pages/Shop';
-import Dashboard from './pages/Dashboard';
 
 type PageType = 'home' | 'login' | 'shop' | 'register' | 'dashboard';
 
@@ -44,10 +45,12 @@ function App() {
   switch (currentPage) {
     case 'login':
       return <Login onNavigate={handleNavigate} />;
+    case 'register':
+      return <Register onNavigate={handleNavigate} />;  // NOVO
     case 'shop':
       return <Shop onNavigate={handleNavigate} />;
     case 'dashboard':
-      return <Dashboard onNavigate={handleNavigate} />;
+      return <Dashboard onNavigate={handleNavigate} />;  // NOVO
     case 'home':
     default:
       return <HomePage onNavigate={handleNavigate} />;
