@@ -10,8 +10,8 @@ import Calendar from './sections/Calendar';
 import Updates from './sections/Updates';
 import Footer from './sections/Footer';
 import Login from './pages/Login';
-import Register from './pages/Register';  // NOVO
-import Dashboard from './pages/Dashboard'; // NOVO
+import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
 import Shop from './pages/Shop';
 
 type PageType = 'home' | 'login' | 'shop' | 'register' | 'dashboard';
@@ -46,11 +46,11 @@ function App() {
     case 'login':
       return <Login onNavigate={handleNavigate} />;
     case 'register':
-      return <Register onNavigate={handleNavigate} />;  // NOVO
+      return <Register onNavigate={handleNavigate} />;
     case 'shop':
       return <Shop onNavigate={handleNavigate} />;
     case 'dashboard':
-      return <Dashboard onNavigate={handleNavigate} />;  // NOVO
+      return <Dashboard onNavigate={handleNavigate} />;
     case 'home':
     default:
       return <HomePage onNavigate={handleNavigate} />;
